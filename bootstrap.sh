@@ -13,6 +13,8 @@ echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-sel
 echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
 apt-get install -q -y oracle-java7-installer
 
+apt-get install -y maven
+
 mkdir /var/lib/sqlite
 chmod a+w /var/lib/sqlite
 
