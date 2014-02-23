@@ -20,9 +20,11 @@ chmod a+w /var/lib/sqlite
 
 apt-get install -y tomcat7
 echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> /etc/default/tomcat7
+sed -i 's/\\\"\$CATALINA_SH\\\" \$\@\"/\"$CATALINA_SH\" jpda $@"/g' /etc/init.d/tomcat7
 service tomcat7 start
+service tomcat7 stop
 
 rm -rf /var/lib/tomcat7/webapps/ROOT
 ln -sf /home/vagrant/emenu_server/target/CloudMenuServer /var/lib/tomcat7/webapps/ROOT
 
-service tomcat7 restart
+service tomcat7 start
