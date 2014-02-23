@@ -10,5 +10,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "public_network"
   config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.synced_folder "../emenu_server/", "/home/vagrant/emenu_server/"
-  #config.vm.synced_folder "../emenu_server/target/CloudMenuServer/", "/var/lib/tomcat7/webapps/ROOT/"
+  config.vm.synced_folder "../emenu_server/target/CloudMenuServer/", "/var/lib/tomcat7/webapps/ROOT/"
 end
