@@ -12,6 +12,12 @@ Clone git repos into the same directory:
     git clone https://github.com/zhoulijoe/emenu_server.git
 
 ### Step 3
+Create Ubuntu 12.04 virtual box:
+
+    cd emenu_deploy
+    vagrant up
+
+### Step 4
 Compile server code:
     
     # ssh to ubuntu VM from emenu_deploy directory
