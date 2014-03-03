@@ -1,0 +1,17 @@
+Listen 8445
+
+<VirtualHost *:8445>
+  DocumentRoot /var/www/emenu_admintool
+  <Directory /var/www/emenu_admintool>
+    Order deny,allow
+    Allow from all
+  </Directory>
+  
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+
+  # Possible values include: debug, info, notice, warn, error, crit,
+  # alert, emerg.
+  LogLevel warn
+
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
