@@ -2,6 +2,8 @@
   JkMount / ajp13_worker
   JkMount /* ajp13_worker
 
+  Header set Access-Control-Allow-Origin "*"
+
   ErrorLog ${APACHE_LOG_DIR}/error.log
 
   # Possible values include: debug, info, notice, warn, error, crit,

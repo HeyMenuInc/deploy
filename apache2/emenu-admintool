@@ -1,11 +1,20 @@
 Listen 8445
 
 <VirtualHost *:8445>
+  ProxyRequests off
+
   DocumentRoot /var/www/emenu_admintool
   <Directory /var/www/emenu_admintool>
     Order deny,allow
     Allow from all
   </Directory>
+
+  <Location /api>
+    ProxyPass http://localhost/api
+    ProxyPassReverse http://localhost/api
+    Order allow,deny
+    Allow from all
+  </Location>
   
   ErrorLog ${APACHE_LOG_DIR}/error.log
 
