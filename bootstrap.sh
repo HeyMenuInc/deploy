@@ -20,13 +20,13 @@ apt-get install -q -y oracle-java7-installer
 apt-get install -y maven
 
 # Install sqlite3
-apt-get install sqlite3
+apt-get install -y sqlite3
 
 mkdir /var/lib/sqlite
 chmod a+w /var/lib/sqlite
 
 # Install apache
-apt-get install apache2
+apt-get install -y apache2
 
 apt-get install -y tomcat7
 echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> /etc/default/tomcat7
@@ -37,12 +37,12 @@ service tomcat7 start
 a2enmod headers
 
 # Install mod_jk
-apt-get install libapache2-mod-jk
+apt-get install -y libapache2-mod-jk
 sed -i '{:a;N;$!ba;s/<\!--\n    <Connector port=\"8009\" protocol=\"AJP\/1.3\" redirectPort=\"8443\" \/>\n    -->/<Connector port=\"8009\" protocol=\"AJP\/1\.3\" redirectPort=\"8443\" \/>/g;t a}' /etc/tomcat7/server.xml
 cp /vagrant/apache2/workers.properties /etc/libapache2-mod-jk/
 
 # Install mod_proxy
-apt-get install libapache2-mod-proxy-html
+apt-get install -y libapache2-mod-proxy-html
 a2enmod proxy
 a2enmod proxy_http
 
