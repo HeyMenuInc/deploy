@@ -26,7 +26,7 @@ Compile server code:
     
     # compile server code
     cd ~/emenu_server
-    ./deploy
+    ./deploy.py
 
     # restart tomcat server
     sudo service tomcat7 restart
